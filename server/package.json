@@ -1,20 +1,24 @@
 {
-  "name": "server",
+  "name": "gemma-chatbot-server",
   "version": "1.0.0",
+  "description": "Gemma 3 27B Chatbot Backend Server",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test-api.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "axios": "^1.10.0",
+    "express": "^4.18.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0"
-  }
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "keywords": ["chatbot", "gemma", "ai", "express"],
+  "author": "Ahmad Alhaj",
+  "license": "MIT"
 }

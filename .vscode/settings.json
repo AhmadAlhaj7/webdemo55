@@ -1,7 +1,0 @@
-{
-  "npm.enableRunFromFolder": true,
-  "npm.exclude": "**/node_modules/**",
-  "npm.packageManager": "npm",
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "explorer.autoReveal": true
-}

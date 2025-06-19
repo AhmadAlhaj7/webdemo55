@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-frontend-domain.com', 'https://your-frontend.netlify.app'] 
+    ? ['https://your-frontend-domain.com', 'https://your-frontend-domain.netlify.app'] 
     : ['http://localhost:3000'],
   credentials: true
 }));
@@ -95,20 +95,6 @@ async function callGemma3API(message) {
   }
 }
 
-// Root endpoint for Render deployment verification
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Gemma 3 27B Chatbot API Server',
-    status: 'Running',
-    endpoints: {
-      health: '/api/health',
-      chat: '/api/chat (POST)',
-      test: '/api/test'
-    },
-    timestamp: new Date().toISOString()
-  });
-});
-
 // Chat endpoint
 app.post('/api/chat', async (req, res) => {
   try {
@@ -155,6 +141,20 @@ app.get('/api/health', (req, res) => {
     timestamp: new Date().toISOString(),
     model: 'gemma-3-27b',
     apiConfigured: !!(process.env.GEMMA_API_KEY && process.env.GEMMA_API_URL)
+  });
+});
+
+// Root endpoint for Render deployment verification
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Gemma 3 27B Chatbot API Server',
+    status: 'Running',
+    endpoints: {
+      health: '/api/health',
+      chat: '/api/chat (POST)',
+      test: '/api/test'
+    },
+    timestamp: new Date().toISOString()
   });
 });
 
