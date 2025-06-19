@@ -1,8 +1,7 @@
 {
   "name": "gemma-chatbot-fullstack",
   "version": "1.0.0",
-  "description": "Full-stack Gemma 3 27B Chatbot with React frontend and Express backend",
-  "scripts": {
+  "description": "Full-stack Gemma 3 27B Chatbot with React frontend and Express backend",  "scripts": {
     "install:server": "cd server && npm install",
     "install:client": "cd client && npm install",
     "install:all": "npm run install:server && npm run install:client",
@@ -11,6 +10,7 @@
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "start:server": "cd server && npm start",
     "start:client": "cd client && npm start",
+    "start": "cd server && npm start",
     "build:client": "cd client && npm run build",
     "deploy:server": "cd server && npm start"
   },
