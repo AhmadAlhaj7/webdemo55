@@ -1,13 +1,27 @@
 services:
+  # Backend API Server
   - type: web
     name: gemma-chatbot-server
     env: node
     buildCommand: cd server && npm install
-    startCommand: cd server && npm start
-    envVars:
+    startCommand: cd server && npm start    envVars:
       - key: NODE_ENV
         value: production
       - key: GEMMA_API_KEY
         sync: false
       - key: GEMMA_API_URL
         sync: false
+      - key: FRONTEND_URL
+        value: https://gemma-chatbot-client.onrender.com
+      - key: PORT
+        value: 10000
+  
+  # Frontend React App
+  - type: web
+    name: gemma-chatbot-client
+    env: node
+    buildCommand: cd client && npm install && npm run build
+    startCommand: cd client && npx serve -s build -p $PORT
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://gemma-chatbot-server.onrender.com
