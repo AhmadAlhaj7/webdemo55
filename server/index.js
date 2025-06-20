@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? [process.env.FRONTEND_URL || 'https://webdemo55-1.onrender.com', 'https://gemma-chatbot-client.onrender.com'] 
+    ? [process.env.FRONTEND_URL, 'https://gemma-chatbot-client.onrender.com'] 
     : ['http://localhost:3000'],
   credentials: true
 }));
