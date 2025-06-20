@@ -20,7 +20,7 @@ services:
     name: gemma-chatbot-client
     env: node
     buildCommand: cd client && npm install && npm run build
-    startCommand: cd client && npx serve -s build -p $PORT
+    startCommand: cd client && npx serve -s build -l ${PORT:-3000}
     envVars:
       - key: REACT_APP_API_URL
         value: https://gemma-chatbot-server.onrender.com
