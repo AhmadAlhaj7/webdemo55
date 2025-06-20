@@ -30,10 +30,9 @@ function App() {
     setInputValue('');
     setIsLoading(true);
 
-    try {
-      // Use environment variable for API URL or fallback to localhost
+    try {      // Use environment variable for API URL or fallback to localhost
       const API_URL = process.env.NODE_ENV === 'production' 
-        ? process.env.REACT_APP_API_URL || 'https://your-render-app.onrender.com'
+        ? process.env.REACT_APP_API_URL || 'https://webdemo55.onrender.com'
         : 'http://localhost:5000';
         
       const response = await fetch(`${API_URL}/api/chat`, {
