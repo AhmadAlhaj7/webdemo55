@@ -10,9 +10,8 @@ services:
       - key: GEMMA_API_KEY
         sync: false
       - key: GEMMA_API_URL
-        sync: false
-      - key: FRONTEND_URL
-        value: https://gemma-chatbot-client.onrender.com
+        sync: false      - key: FRONTEND_URL
+        value: https://webdemo55-1.onrender.com
       - key: PORT
         value: 10000
   
